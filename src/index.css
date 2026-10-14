@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-void: #06070a;
+    --bg-surface-1: #0c0e14;
+    --bg-surface-2: #12151f;
+    --bg-surface-3: #181c2a;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-highlight: rgba(255, 255, 255, 0.14);
+    --accent-primary: #6366f1;
+    --accent-secondary: #8b5cf6;
+    --accent-cyan: #06b6d4;
+
+    /* Dynamic Wallpaper-Driven Accent Tokens */
+    --app-accent: #34D399;
+    --app-accent-hover: #10B981;
+    --app-accent-text: #064E3B;
+    --app-accent-glow: rgba(52, 211, 153, 0.45);
+    --app-accent-subtle: rgba(52, 211, 153, 0.16);
+    --app-accent-border: rgba(52, 211, 153, 0.35);
+    --app-accent-gradient: linear-gradient(135deg, #34D399 0%, #06B6D4 100%);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent !important;
+    overflow: hidden;
+    user-select: none;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #e2e8f0;
+    letter-spacing: -0.01em;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+    background-color: transparent !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  code, kbd, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Obsidian Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.4);
+}
+
+/* Luxury Dark Glassmorphism */
+.glass-panel {
+  background: rgba(10, 11, 16, 0.92);
+  backdrop-filter: blur(32px) saturate(210%);
+  -webkit-backdrop-filter: blur(32px) saturate(210%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 24px 60px -12px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+.glass-pill {
+  background: rgba(8, 9, 14, 0.90);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 
+    0 12px 36px rgba(0, 0, 0, 0.75), 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 0 20px -5px rgba(99, 102, 241, 0.25);
+}
+
+.dark-card {
+  background: rgba(14, 16, 23, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+}
+
+.dark-card:hover {
+  background: rgba(18, 21, 30, 0.85);
+  border-color: rgba(255, 255, 255, 0.11);
+}
+
+.dark-input {
+  background: rgba(7, 8, 12, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.dark-input:focus {
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 0 15px -3px rgba(139, 92, 246, 0.25), inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Gradients & Accents */
+.accent-gradient-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  box-shadow: 0 4px 14px -2px rgba(99, 102, 241, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.accent-gradient-btn:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  box-shadow: 0 6px 18px -2px rgba(99, 102, 241, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.accent-pill-active {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.85) 0%, rgba(124, 58, 237, 0.85) 100%);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.35);
+}
+
+/* Wallpaper Dynamic Accent Classes */
+.bg-app-accent {
+  background-color: var(--app-accent) !important;
+  color: var(--app-accent-text) !important;
+}
+
+.text-app-accent {
+  color: var(--app-accent) !important;
+}
+
+.border-app-accent {
+  border-color: var(--app-accent-border) !important;
+}
+
+.subtle-app-accent {
+  background-color: var(--app-accent-subtle) !important;
+  border-color: var(--app-accent-border) !important;
+}
+
+.glow-app-accent {
+  box-shadow: 0 0 16px var(--app-accent-glow) !important;
+}
+
+/* Soul Dot Animation */
+@keyframes soulPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 10px 4px rgba(139, 92, 246, 0.35);
+  }
+}
+
+.soul-dot-active {
+  animation: soulPulse 2.4s infinite ease-in-out;
+}
+
+/* Native drag region */
+.tauri-drag {
+  -webkit-app-region: drag;
+}
+.tauri-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* ─────────────────────────────────────────
+   Dynamic Island / Notch Bar
+   ───────────────────────────────────────── */
+
+/* The compact immersive notch */
+.notch-island {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border: none !important;
+  box-shadow: none !important;
+  width: max-content;
+  max-width: 780px;
+  user-select: none;
+}
+
+.notch-island:hover {
+  box-shadow: none !important;
+}
+
+/* Tab strip */
+.notch-tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+}
+
+/* Individual tab */
+.notch-tab {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2.5px 7.5px;
+  border-radius: 9999px;
+  border: none !important;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    opacity 0.15s ease;
+  white-space: nowrap;
+  line-height: 1;
+  outline: none;
+}
+
+.notch-tab:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active / selected tab */
+.notch-tab--active {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Power tab — red accent */
+.notch-tab--power {
+  color: rgba(244, 63, 94, 0.7);
+  margin-left: 2px;
+}
+
+.notch-tab--power:hover {
+  color: #f43f5e;
+  background: rgba(244, 63, 94, 0.14);
+}
+
+.notch-tab-label {
+  font-size: 11px;
+}
+
+/* Panel that slides down from the notch */
+.notch-panel {
+  margin-top: 5px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000000;
+  backdrop-filter: blur(48px) saturate(200%);
+  -webkit-backdrop-filter: blur(48px) saturate(200%);
+  border: none !important;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.95),
+    0 4px 16px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  transform-origin: top center;
+}
+
+@keyframes notchPanelIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.88) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+@keyframes fadeFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.9);
+  }
+}
+
+.animate-fade-float {
+  animation: fadeFloat 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
